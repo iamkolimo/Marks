@@ -14,17 +14,17 @@
   window.addEventListener("scroll", onScroll, { passive: true });
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
+    const setNavState = (open) => {
+      nav.classList.toggle("is-open", open);
       toggle.classList.toggle("is-open", open);
+      document.body.classList.toggle("nav-open", open);
       toggle.setAttribute("aria-expanded", String(open));
+    };
+    toggle.addEventListener("click", () => {
+      setNavState(!nav.classList.contains("is-open"));
     });
     nav.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        toggle.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      })
+      a.addEventListener("click", () => setNavState(false))
     );
   }
 
