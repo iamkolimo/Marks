@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/reserve.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
   </head>
   <body class="reserve-body">
     <header class="site-header">
@@ -67,12 +68,36 @@
 
               <label class="field">
                 <span>Date</span>
-                <input type="date" name="date" required />
+                <input type="text" name="date" id="resDate" required readonly placeholder="Select a date" autocomplete="off" />
               </label>
 
               <label class="field">
                 <span>Time</span>
-                <input type="time" name="time" required min="12:00" />
+                <select name="time" id="resTime" required>
+                  <option value="">Select a time</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="14:30">2:30 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="15:30">3:30 PM</option>
+                  <option value="16:00">4:00 PM</option>
+                  <option value="16:30">4:30 PM</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                  <option value="21:30">9:30 PM</option>
+                  <option value="22:00">10:00 PM</option>
+                  <option value="22:30">10:30 PM</option>
+                </select>
               </label>
 
               <label class="field">
@@ -173,11 +198,26 @@
         </div>
         <p class="footer-note">
           &copy; <span id="year"></span> Marks at the Park. All rights reserved.
+          <span class="footer-credit">Designed by <a href="https://kolimomedia.com" target="_blank" rel="noopener">Kolimo Multimedia</a></span>
         </p>
       </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13"></script>
+    <script>
+      (() => {
+        if (window.flatpickr) {
+          flatpickr("#resDate", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            altInput: true,
+            altFormat: "l, F j, Y",
+            disableMobile: true,
+          });
+        }
+      })();
+    </script>
     <script>
       (() => {
         const form = document.getElementById("reserveForm");

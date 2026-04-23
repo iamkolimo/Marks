@@ -78,8 +78,8 @@
 }
 
 .menu-tab.is-active {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--gold-deep);
+  color: #fff;
 }
 
 /* ---------- Two-column grid ---------- */
