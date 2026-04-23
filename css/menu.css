@@ -1,303 +1,492 @@
+/* ========================================================
+   Menu page — two-column, Forno-reference layout
+   (design arrangement only; fonts/content are Marks' own)
+   ======================================================== */
+
 .menu-page {
-  max-width: 1080px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 9rem var(--pad) 6rem;
+  padding: 9rem var(--pad) 5rem;
 }
 
-/* ---------- Menu hero ---------- */
-.menu-hero {
+/* ---------- Cover ---------- */
+.menu-cover {
   text-align: center;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid var(--line);
+  padding: 0 0 3.5rem;
 }
 
-.menu-title {
+.cover-eyebrow {
+  margin: 0 0 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.cover-title {
   margin: 0 0 1rem;
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  line-height: 1;
+  font-style: italic;
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  line-height: 0.95;
   letter-spacing: -0.01em;
 }
 
-.menu-sub {
+.cover-sub {
   max-width: 520px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2.25rem;
   color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
-.menu-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+.cover-rule {
+  width: 56px;
+  height: 1px;
+  margin: 0 auto;
+  background: var(--gold);
 }
 
-.chip {
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--ink);
-  padding: 0.55rem 1.1rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border-radius: 999px;
-}
-
-.chip:hover {
-  border-color: var(--ink);
-}
-
-.chip.is-active {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
-}
-
-/* ---------- Sections ---------- */
-.menu-section {
-  padding: 4.5rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.menu-section.is-hidden {
-  display: none;
-}
-
-.menu-section-head {
+/* ---------- Two-column grid ---------- */
+.menu-grid {
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 2rem;
-  align-items: baseline;
-  margin-bottom: 2.75rem;
-}
-
-.menu-section-head .kicker {
-  margin: 0;
-  align-self: start;
-  padding-top: 0.75rem;
-}
-
-.menu-section-head h2 {
-  margin: 0 0 0.6rem;
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1;
-  letter-spacing: -0.005em;
-  grid-column: 2;
-}
-
-.section-lede {
-  grid-column: 2;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.98rem;
-  max-width: 520px;
-}
-
-/* ---------- Dish rows ---------- */
-.dishes {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-.dish {
-  padding-left: 80px;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
   position: relative;
 }
 
-.dish::before {
+.menu-grid::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0.9rem;
-  width: 48px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.7;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
 }
 
-.dish-head {
+.menu-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* ---------- Category ---------- */
+.cat {
+  break-inside: avoid;
+}
+
+.cat-head {
+  margin: 0 0 0.35rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.cat-lede {
+  margin: 0 0 1.5rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.cat-sub {
+  margin: 1.75rem 0 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
-  margin-bottom: 0.35rem;
 }
 
-.dish-name {
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
-  letter-spacing: 0.005em;
-  white-space: normal;
-}
-
-.dish-dots {
-  flex: 1;
-  min-width: 2rem;
-  border-bottom: 1px dotted rgba(20, 20, 20, 0.25);
-  transform: translateY(-4px);
-}
-
-.dish-price {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 1.25rem;
-  color: var(--gold-deep);
-  white-space: nowrap;
-}
-
-.dish-note {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.94rem;
-  line-height: 1.6;
-  max-width: 620px;
-}
-
-.tag {
-  display: inline-block;
-  margin-left: 0.6rem;
-  font-family: var(--sans);
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-deep);
-  border: 1px solid currentColor;
-  padding: 0.18rem 0.55rem;
-  border-radius: 999px;
-  transform: translateY(-2px);
-  font-weight: 500;
-}
-
-/* ---------- Omakase / tasting ---------- */
-.menu-tasting {
-  margin: 5rem 0 3rem;
-  padding: 4.5rem clamp(2rem, 5vw, 4.5rem);
-  background: var(--bg-alt);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.menu-tasting::before,
-.menu-tasting::after {
+.cat-sub::before {
   content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184, 147, 90, 0.14), transparent 70%);
-  pointer-events: none;
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: var(--gold);
+  transform: translateY(-3px);
 }
 
-.menu-tasting::before {
-  top: -80px;
-  left: -60px;
-}
-
-.menu-tasting::after {
-  bottom: -100px;
-  right: -60px;
-}
-
-.tasting-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 560px;
-  margin: 0 auto;
-}
-
-.menu-tasting h2 {
-  margin: 0 0 1rem;
-  font-family: var(--serif);
+.cat-sub-meta {
   font-weight: 300;
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
-  line-height: 1;
-}
-
-.tasting-lede {
-  margin: 0 0 1.75rem;
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-
-.tasting-price {
-  margin: 0 0 0.35rem;
-  font-family: var(--serif);
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   color: var(--muted);
-}
-
-.tasting-price span {
-  font-size: 1.6rem;
-  color: var(--ink);
-  margin-right: 0.4rem;
-  letter-spacing: 0;
   text-transform: none;
+  font-style: italic;
 }
 
-.tasting-note {
-  margin: 0 0 2rem;
+/* ---------- Dishes ---------- */
+.cat-dishes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.d {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.55rem 0;
+  line-height: 1.55;
+}
+
+.d + .d {
+  border-top: 1px dotted rgba(20, 20, 20, 0.08);
+}
+
+.d-line {
+  flex: 1;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.d-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.d-desc {
   color: var(--muted);
+  font-weight: 300;
+}
+
+.d-price {
+  flex-shrink: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--gold-deep);
+  min-width: 2.25rem;
+  text-align: right;
+  letter-spacing: 0.01em;
+}
+
+/* Compact dish rows (nigiri, sashimi, sides) */
+.dishes-compact .d {
+  padding: 0.35rem 0;
+}
+
+.dishes-compact .d-line {
+  font-size: 0.88rem;
+}
+
+.dishes-compact .d-name {
   font-size: 0.9rem;
 }
 
-.menu-foot {
-  text-align: center;
+/* ---------- Inline markers ---------- */
+.d-tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.08rem 0.38rem;
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   color: var(--muted);
-  font-size: 0.85rem;
-  max-width: 560px;
-  margin: 3rem auto 0;
-  line-height: 1.65;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  text-transform: uppercase;
+  transform: translateY(-2px);
+  line-height: 1.3;
+  vertical-align: middle;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 720px) {
-  .menu-section-head {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+.d-tag + .d-tag {
+  margin-left: 0.25rem;
+}
+
+.d-tag.tag-v {
+  color: #6a7a3a;
+}
+
+.d-meta {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 400;
+  transform: translateY(-1px);
+}
+
+/* spicy icon — small flame */
+.d-spicy {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.85rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.12em;
+  background: currentColor;
+  color: #c24a2a;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13' fill='black'><path d='M5 0C5 2 7 3 7 5.5C7 7 6 7.5 6 9C6 9.8 6.6 10 7 10C7.3 10 7.8 9.8 8 9.3C8.3 10.5 8 12 6.5 12.7C6.8 12.4 7 12 7 11.5C7 10.5 6 10 5 10C4 10 3 10.5 3 11.5C3 12 3.2 12.4 3.5 12.7C2 12 1.7 10.5 2 9.3C2.2 9.8 2.7 10 3 10C3.4 10 4 9.8 4 9C4 7.5 2.5 6.5 2.5 4.5C2.5 3 3.5 2 4 1C4.3 1.8 4 2.5 4 3.3C4 4.3 4.8 4 5 3C5.2 2 5 1 5 0Z'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13' fill='black'><path d='M5 0C5 2 7 3 7 5.5C7 7 6 7.5 6 9C6 9.8 6.6 10 7 10C7.3 10 7.8 9.8 8 9.3C8.3 10.5 8 12 6.5 12.7C6.8 12.4 7 12 7 11.5C7 10.5 6 10 5 10C4 10 3 10.5 3 11.5C3 12 3.2 12.4 3.5 12.7C2 12 1.7 10.5 2 9.3C2.2 9.8 2.7 10 3 10C3.4 10 4 9.8 4 9C4 7.5 2.5 6.5 2.5 4.5C2.5 3 3.5 2 4 1C4.3 1.8 4 2.5 4 3.3C4 4.3 4.8 4 5 3C5.2 2 5 1 5 0Z'/></svg>") center / contain no-repeat;
+}
+
+/* signature marker — small gold diamond */
+.d-sig {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.45rem;
+  vertical-align: 0.1em;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+/* Signatures section subtle backing */
+.cat-signatures {
+  padding: 2rem 2rem 1.5rem;
+  background: var(--bg-alt);
+  border-left: 2px solid var(--gold);
+}
+
+.cat-signatures .cat-head {
+  margin-top: 0;
+}
+
+/* ---------- Legend ---------- */
+.menu-legend {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.legend-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-note {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ---------- Responsive ----------
+   Two-column layout is preserved at every viewport so the
+   printed-menu feel is consistent. Below each breakpoint
+   we progressively tighten the grid, type and row layout
+   to keep columns readable.
+   ------------------------------------------------------ */
+
+/* Tablet — narrower column gap, slightly smaller type */
+@media (max-width: 960px) {
+  .menu-page {
+    padding: 8rem 1.25rem 4rem;
   }
 
-  .menu-section-head .kicker {
-    padding-top: 0;
+  .menu-grid {
+    gap: 2rem;
   }
 
-  .menu-section-head h2,
-  .section-lede {
+  .menu-col {
+    gap: 2.75rem;
+  }
+
+  .cat-head {
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
+  }
+
+  .cat-lede {
+    font-size: 0.78rem;
+  }
+
+  .d {
+    gap: 0.85rem;
+  }
+
+  .d-line,
+  .d-name {
+    font-size: 0.88rem;
+  }
+
+  .d-desc {
+    font-size: 0.86rem;
+  }
+
+  .d-price {
+    font-size: 0.95rem;
+  }
+
+  .cat-signatures {
+    padding: 1.5rem 1.25rem 1rem;
+  }
+}
+
+/* Phone landscape / small tablet — stack description below name
+   inside each column so the two-column layout stays */
+@media (max-width: 680px) {
+  .menu-page {
+    padding: 7rem 0.75rem 3rem;
+  }
+
+  .menu-grid {
+    gap: 1.25rem;
+  }
+
+  .menu-col {
+    gap: 2.25rem;
+  }
+
+  .cover-title {
+    font-size: clamp(2.75rem, 12vw, 4rem);
+  }
+
+  .cat-head {
+    font-size: 0.95rem;
+    letter-spacing: 0.16em;
+    line-height: 1.3;
+  }
+
+  .cat-lede {
+    font-size: 0.72rem;
+    margin-bottom: 1rem;
+  }
+
+  .cat-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    margin-top: 1.25rem;
+  }
+
+  .cat-sub-meta {
+    display: none;
+  }
+
+  /* stack dish: row 1 = name + price, row 2 = description */
+  .d {
+    flex-wrap: wrap;
+    gap: 0.15rem 0.5rem;
+    padding: 0.65rem 0;
+  }
+
+  .d-line {
+    flex: 1 1 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    column-gap: 0.5rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .d-name {
+    font-size: 0.82rem;
     grid-column: 1;
   }
 
-  .dish {
-    padding-left: 0;
+  .d-desc {
+    display: block;
+    grid-column: 1 / -1;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    margin-top: 0.15rem;
+    color: var(--muted);
   }
 
-  .dish::before {
+  .d-price {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 0.88rem;
+    min-width: auto;
+  }
+
+  /* dietary tags sit inline with name row */
+  .d-tag,
+  .d-meta {
+    grid-column: 1;
+    align-self: center;
+  }
+
+  .d-spicy,
+  .d-sig {
+    grid-column: 1;
+  }
+
+  .dishes-compact .d-desc {
+    display: none; /* keep nigiri/sashimi tight on mobile */
+  }
+
+  .cat-signatures {
+    padding: 1.25rem 1rem 0.75rem;
+  }
+
+  .legend-inner {
+    gap: 0.75rem 1.25rem;
+    font-size: 0.66rem;
+  }
+}
+
+/* Very narrow phones — keep two columns, minimum comfortable size */
+@media (max-width: 420px) {
+  .menu-page {
+    padding: 6.5rem 0.5rem 2.5rem;
+  }
+
+  .menu-grid {
+    gap: 0.85rem;
+  }
+
+  .cat-head {
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+  }
+
+  .cat-lede {
     display: none;
   }
 
-  .dish-head {
-    flex-wrap: wrap;
+  .d-line,
+  .d-name {
+    font-size: 0.76rem;
   }
 
-  .dish-dots {
-    display: none;
+  .d-desc {
+    font-size: 0.7rem;
   }
 
-  .dish-price {
-    margin-left: auto;
+  .d-price {
+    font-size: 0.8rem;
+  }
+
+  .d-tag {
+    font-size: 0.5rem;
+    padding: 0.05rem 0.28rem;
   }
 }
