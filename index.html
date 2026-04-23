@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Marks at the Park — Japanese and Pan-Asian fine dining." />
+    <title>Marks at the Park — Japanese & Pan-Asian Fine Dining</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="brand" aria-label="Marks at the Park — home">
+        <img src="images/logo.svg" alt="Marks at the Park" class="brand-logo" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="menu.html">Menu</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#visit">Visit</a>
+        <a href="#reserve" class="nav-reserve">Reserve</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-pattern" aria-hidden="true">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="seigaiha" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+                <path d="M0 10 A10 10 0 0 1 20 10" fill="none" stroke="currentColor" stroke-width="0.6" />
+                <path d="M-10 10 A10 10 0 0 1 10 10" fill="none" stroke="currentColor" stroke-width="0.6" />
+                <path d="M10 10 A10 10 0 0 1 30 10" fill="none" stroke="currentColor" stroke-width="0.6" />
+              </pattern>
+              <clipPath id="circle-clip"><circle cx="100" cy="100" r="100" /></clipPath>
+            </defs>
+            <g clip-path="url(#circle-clip)">
+              <rect width="200" height="200" fill="url(#seigaiha)" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="hero-inner">
+          <p class="eyebrow">Japanese &middot; Pan-Asian &middot; Est. 2026</p>
+          <h1 id="hero-title" class="hero-title">
+            Quiet craft,<br />bold flavour.
+          </h1>
+          <p class="hero-lede">
+            A considered dining room in the heart of the park — where seasonal Japanese
+            technique meets the wider pulse of Asia. Small plates, patient service, a
+            single evening worth slowing down for.
+          </p>
+          <div class="hero-cta">
+            <a href="menu.html" class="btn btn-primary">
+              <span>View the Menu</span>
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" />
+              </svg>
+            </a>
+            <a href="#reserve" class="btn btn-ghost">Reserve a table</a>
+          </div>
+        </div>
+
+        <div class="hero-branch" aria-hidden="true">
+          <svg viewBox="0 0 260 320" xmlns="http://www.w3.org/2000/svg">
+            <g fill="currentColor" opacity="0.85">
+              <path d="M10 40 C 60 60, 110 90, 150 140 S 220 230, 250 300" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <path d="M60 68 C 80 50, 100 55, 95 80 C 90 70, 75 72, 60 68 Z"/>
+              <path d="M115 105 C 135 90, 150 100, 142 122 C 135 112, 122 110, 115 105 Z"/>
+              <path d="M165 160 C 185 148, 200 160, 190 180 C 183 170, 172 166, 165 160 Z"/>
+              <path d="M200 215 C 220 205, 232 218, 222 238 C 215 228, 206 222, 200 215 Z"/>
+              <circle cx="78" cy="62" r="2.2"/>
+              <circle cx="128" cy="98" r="2.2"/>
+              <circle cx="180" cy="156" r="2.2"/>
+              <circle cx="214" cy="212" r="2.2"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <section id="philosophy" class="philosophy">
+        <div class="two-col">
+          <div class="col">
+            <p class="kicker">— Philosophy</p>
+            <h2>One kitchen, many coasts.</h2>
+          </div>
+          <div class="col">
+            <p>
+              Marks draws a single line from a Kyoto counter to a Bangkok
+              night-market, from Seoul's banchan to the charcoal pits of Hokkaido.
+              Every plate begins with Japanese discipline — pristine fish,
+              considered knife-work, restraint — and answers with the warmth of the
+              wider region.
+            </p>
+            <p>
+              We cook with what the market offers this week and send it out on
+              handmade ceramics. There is no fixed menu; there is tonight's menu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="visit" class="visit">
+        <div class="visit-grid">
+          <div>
+            <p class="kicker">— Hours</p>
+            <p class="big">Tue – Sat<br />6pm &ndash; late</p>
+            <p class="muted">Closed Sunday &amp; Monday</p>
+          </div>
+          <div>
+            <p class="kicker">— Address</p>
+            <p class="big">12 Park Lane<br />The Pavilion</p>
+            <p class="muted">Entrance via the east gate</p>
+          </div>
+          <div>
+            <p class="kicker">— Contact</p>
+            <p class="big"><a href="mailto:hello@marksatthepark.com">hello@marksatthepark.com</a></p>
+            <p class="muted">+00 0000 000 000</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-mark">
+          <img src="images/logo.svg" alt="Marks at the Park" />
+        </div>
+        <p class="footer-note">
+          &copy; <span id="year"></span> Marks at the Park. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The menu at Marks at the Park — Japanese and Pan-Asian tasting plates, robata, raw and seasonal mains." />
+    <title>Menu — Marks at the Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="brand" aria-label="Marks at the Park — home">
+        <img src="images/logo.svg" alt="Marks at the Park" class="brand-logo" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="menu.html" aria-current="page">Menu</a>
+        <a href="index.html#philosophy">Philosophy</a>
+        <a href="index.html#visit">Visit</a>
+        <a href="index.html#reserve" class="nav-reserve">Reserve</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main class="menu-page">
+      <section class="menu-hero">
+        <p class="eyebrow">— Tonight's Menu</p>
+        <h1 class="menu-title">À la carte</h1>
+        <p class="menu-sub">
+          Served 6pm &ndash; late. Dishes change with the market; ask your host
+          about this evening's specials. Prices in GBP.
+        </p>
+
+        <div class="menu-filters" role="tablist" aria-label="Menu sections">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="bites" role="tab" aria-selected="false">Bites</button>
+          <button class="chip" data-filter="raw" role="tab" aria-selected="false">Raw</button>
+          <button class="chip" data-filter="robata" role="tab" aria-selected="false">Robata</button>
+          <button class="chip" data-filter="plates" role="tab" aria-selected="false">Plates</button>
+          <button class="chip" data-filter="rice" role="tab" aria-selected="false">Rice &amp; Noodles</button>
+          <button class="chip" data-filter="dessert" role="tab" aria-selected="false">Dessert</button>
+        </div>
+      </section>
+
+      <section class="menu-section" data-section="bites">
+        <header class="menu-section-head">
+          <p class="kicker">— 01</p>
+          <h2>Bites</h2>
+          <p class="section-lede">Amuse and openers. A few bites to begin the evening.</p>
+        </header>
+        <ul class="dishes">
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Edamame, Yuzu Salt</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">7</span>
+            </div>
+            <p class="dish-note">Steamed soybean, Nagano yuzu, Maldon.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Tuna Tartare, Sesame Cracker <span class="tag">signature</span></h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">18</span>
+            </div>
+            <p class="dish-note">Bluefin tartare, avocado, shallot, puffed sesame tuile.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Crispy Soft-Shell Crab Bao</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">14</span>
+            </div>
+            <p class="dish-note">Kimchi mayo, pickled cucumber, milk bun.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Duck Gyoza, Black Vinegar</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">13</span>
+            </div>
+            <p class="dish-note">Pan-fried, confit duck, Chinkiang, chive oil.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" data-section="raw">
+        <header class="menu-section-head">
+          <p class="kicker">— 02</p>
+          <h2>Raw</h2>
+          <p class="section-lede">Sashimi, crudo and tartares. All fish flown from Toyosu &amp; Cornwall, twice a week.</p>
+        </header>
+        <ul class="dishes">
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Chef's Sashimi Selection</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">32</span>
+            </div>
+            <p class="dish-note">Seven cuts, market fish, fresh wasabi, house shoyu.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Salmon Belly, Truffle Ponzu</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">22</span>
+            </div>
+            <p class="dish-note">Torched sake toro, black truffle, yuzu ponzu.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Hamachi Crudo, Green Chilli</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">24</span>
+            </div>
+            <p class="dish-note">Yellowtail, jalapeño, coriander, lime oil.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Scallop, Nashi Pear, Dashi</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">26</span>
+            </div>
+            <p class="dish-note">Orkney scallop, Asian pear, kombu dashi, shiso.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" data-section="robata">
+        <header class="menu-section-head">
+          <p class="kicker">— 03</p>
+          <h2>Robata</h2>
+          <p class="section-lede">Binchotan charcoal. Fire, salt, patience.</p>
+        </header>
+        <ul class="dishes">
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Miso-Glazed Black Cod <span class="tag">signature</span></h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">38</span>
+            </div>
+            <p class="dish-note">72-hour saikyo miso cure, pickled ginger.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Wagyu Short Rib, Gochujang Glaze</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">46</span>
+            </div>
+            <p class="dish-note">Australian wagyu, Korean chilli, spring onion, sesame.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Chicken Yakitori, Tare</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">16</span>
+            </div>
+            <p class="dish-note">Thigh, negi, house tare, sansho pepper.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Charred Hispi, Burnt Butter, Ponzu</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">14</span>
+            </div>
+            <p class="dish-note">Pointed cabbage, brown butter, ponzu, katsuobushi.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" data-section="plates">
+        <header class="menu-section-head">
+          <p class="kicker">— 04</p>
+          <h2>Plates</h2>
+          <p class="section-lede">Larger plates, meant to be shared.</p>
+        </header>
+        <ul class="dishes">
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Tempura, Tiger Prawn &amp; Garden Vegetables</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">28</span>
+            </div>
+            <p class="dish-note">Featherlight batter, tentsuyu, grated daikon.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Massaman of Cornish Lamb</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">34</span>
+            </div>
+            <p class="dish-note">Slow-braised shoulder, peanuts, potato, roti.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Hainanese Half Chicken</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">29</span>
+            </div>
+            <p class="dish-note">Poached, ginger-scallion, chilli, chicken rice.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Aubergine Dengaku</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">19</span>
+            </div>
+            <p class="dish-note">Roasted aubergine, red miso, candied walnut.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" data-section="rice">
+        <header class="menu-section-head">
+          <p class="kicker">— 05</p>
+          <h2>Rice &amp; Noodles</h2>
+          <p class="section-lede">To anchor the meal.</p>
+        </header>
+        <ul class="dishes">
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Donabe Rice, Shiitake &amp; Chestnut</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">18</span>
+            </div>
+            <p class="dish-note">Clay-pot rice for two, autumn mushrooms, sansho.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Dan Dan Udon</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">17</span>
+            </div>
+            <p class="dish-note">Hand-pulled udon, Sichuan pork, peanut, chilli oil.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Steamed Jasmine Rice</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">4</span>
+            </div>
+            <p class="dish-note">Thai jasmine, toasted sesame.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-section" data-section="dessert">
+        <header class="menu-section-head">
+          <p class="kicker">— 06</p>
+          <h2>Dessert</h2>
+          <p class="section-lede">A quiet finish.</p>
+        </header>
+        <ul class="dishes">
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Yuzu Tart, Shiso Sorbet</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">12</span>
+            </div>
+            <p class="dish-note">Torched meringue, sablé, green shiso.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Matcha &amp; Black Sesame Parfait</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">11</span>
+            </div>
+            <p class="dish-note">Uji matcha, toasted sesame, kinako crumb.</p>
+          </li>
+          <li class="dish">
+            <div class="dish-head">
+              <h3 class="dish-name">Warm Coconut Pandan Pudding</h3>
+              <span class="dish-dots"></span>
+              <span class="dish-price">11</span>
+            </div>
+            <p class="dish-note">Pandan custard, palm sugar caramel, salted coconut.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="menu-tasting">
+        <div class="tasting-inner">
+          <p class="kicker">— Tasting</p>
+          <h2>Omakase</h2>
+          <p class="tasting-lede">
+            Seven courses, chef's choice. A walk through tonight's best of the
+            market — raw, robata, a warm plate and a sweet.
+          </p>
+          <p class="tasting-price"><span>£95</span> per guest</p>
+          <p class="tasting-note">Optional sake &amp; wine pairing, £65. Available Tue &ndash; Fri.</p>
+          <a href="index.html#reserve" class="btn btn-primary">
+            <span>Reserve a table</span>
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+              <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <p class="menu-foot">
+        A discretionary 12.5% service charge is added to all bills. Please inform
+        your host of allergies or dietary requirements — most dishes can be
+        adapted.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-mark">
+          <img src="images/logo.svg" alt="Marks at the Park" />
+        </div>
+        <p class="footer-note">
+          &copy; <span id="year"></span> Marks at the Park. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+  </body>
+</html>
