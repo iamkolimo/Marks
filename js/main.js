@@ -40,7 +40,7 @@
     { threshold: 0.15 }
   );
   document
-    .querySelectorAll(".philosophy, .visit, .hero-inner > *")
+    .querySelectorAll(".philosophy, .experiences, .reserve, .visit, .hero-inner > *")
     .forEach((el) => {
       el.classList.add("reveal");
       io.observe(el);
