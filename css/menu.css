@@ -82,16 +82,23 @@
   color: #fff;
 }
 
-/* ---------- Two-column grid ---------- */
+/* ---------- Menu layout ---------- */
 .menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+/* Paired-row: two sections side-by-side with a centered vertical rule */
+.pair-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: clamp(2.5rem, 5vw, 4.5rem);
-  row-gap: clamp(3.5rem, 6vw, 5.5rem);
+  row-gap: clamp(3.5rem, 6vw, 5rem);
   position: relative;
 }
 
-.menu-grid::before {
+.pair-row::before {
   content: "";
   position: absolute;
   top: 0;
@@ -102,6 +109,43 @@
   transform: translateX(-50%);
 }
 
+/* Full-width section — centered title, two-column dish list */
+.cat-full {
+  text-align: center;
+  padding: 0.5rem clamp(1rem, 5vw, 4rem);
+}
+
+.cat-full .cat-head {
+  text-align: center;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  letter-spacing: 0.3em;
+}
+
+.cat-full .cat-lede {
+  text-align: center;
+  margin: 0.4rem auto 1.75rem;
+  max-width: 540px;
+}
+
+.cat-full .cat-dishes {
+  text-align: left;
+}
+
+@media (min-width: 760px) {
+  .cat-full .cat-dishes {
+    column-count: 2;
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+  }
+  .cat-full .cat-dishes .d {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cat-full .cat-dishes .d + .d {
+    border-top: 0;
+  }
+}
+
+/* Backward compat for any leftover .menu-col wrappers */
 .menu-col {
   display: flex;
   flex-direction: column;
