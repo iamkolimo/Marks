@@ -176,6 +176,16 @@
   display: block;
 }
 
+/* On mobile, center the illustration vertically in the empty space
+   instead of pinning it to the bottom of the column */
+@media (max-width: 680px) {
+  .cat-illus {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 2rem 1rem;
+  }
+}
+
 .cat-head {
   margin: 0 0 0.35rem;
   font-family: var(--serif);
