@@ -109,6 +109,46 @@
   transform: translateX(-50%);
 }
 
+/* Triple-row: three sections side-by-side with two vertical rules */
+.triple-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: clamp(1.75rem, 3.5vw, 3rem);
+  row-gap: clamp(3rem, 5vw, 4.5rem);
+  position: relative;
+}
+
+.triple-row::before,
+.triple-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.triple-row::before {
+  left: calc(33.333% - 0.5px);
+}
+
+.triple-row::after {
+  left: calc(66.666% - 0.5px);
+}
+
+@media (max-width: 720px) {
+  .triple-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .triple-row::after {
+    display: none;
+  }
+  .triple-row::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* Full-width section — centered title, two-column dish list */
 .cat-full {
   text-align: center;
