@@ -86,7 +86,8 @@
 .menu-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(2.5rem, 6vw, 5rem);
+  column-gap: clamp(2.5rem, 5vw, 4.5rem);
+  row-gap: clamp(3.5rem, 6vw, 5.5rem);
   position: relative;
 }
 
@@ -195,7 +196,7 @@
 }
 
 .d-desc {
-  color: var(--muted);
+  color: var(--ink);
   font-weight: 300;
 }
 
@@ -210,12 +211,7 @@
   letter-spacing: 0.01em;
 }
 
-.d-price::before {
-  content: "\20A6";
-  margin-right: 0.08em;
-  font-weight: 400;
-  opacity: 0.75;
-}
+/* Naira symbol removed — prices render as plain numbers */
 
 /* Paired price (bottle + shot / glass) for spirits & wines */
 .d-price-pair {
@@ -257,6 +253,21 @@
   font-size: 0.9rem;
 }
 
+/* Two-column dish list (used for Maki Signature rolls at desktop) */
+@media (min-width: 1100px) {
+  .dishes-2col {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+  .dishes-2col .d {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .dishes-2col .d + .d {
+    border-top: 0;
+  }
+}
+
 /* ---------- Inline markers ---------- */
 .d-tag {
   display: inline-block;
@@ -295,75 +306,7 @@
   transform: translateY(-1px);
 }
 
-/* spicy icon — small flame */
-.d-spicy {
-  display: inline-block;
-  width: 0.65rem;
-  height: 0.85rem;
-  margin-right: 0.4rem;
-  vertical-align: -0.12em;
-  background: currentColor;
-  color: #c24a2a;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13' fill='black'><path d='M5 0C5 2 7 3 7 5.5C7 7 6 7.5 6 9C6 9.8 6.6 10 7 10C7.3 10 7.8 9.8 8 9.3C8.3 10.5 8 12 6.5 12.7C6.8 12.4 7 12 7 11.5C7 10.5 6 10 5 10C4 10 3 10.5 3 11.5C3 12 3.2 12.4 3.5 12.7C2 12 1.7 10.5 2 9.3C2.2 9.8 2.7 10 3 10C3.4 10 4 9.8 4 9C4 7.5 2.5 6.5 2.5 4.5C2.5 3 3.5 2 4 1C4.3 1.8 4 2.5 4 3.3C4 4.3 4.8 4 5 3C5.2 2 5 1 5 0Z'/></svg>") center / contain no-repeat;
-          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 13' fill='black'><path d='M5 0C5 2 7 3 7 5.5C7 7 6 7.5 6 9C6 9.8 6.6 10 7 10C7.3 10 7.8 9.8 8 9.3C8.3 10.5 8 12 6.5 12.7C6.8 12.4 7 12 7 11.5C7 10.5 6 10 5 10C4 10 3 10.5 3 11.5C3 12 3.2 12.4 3.5 12.7C2 12 1.7 10.5 2 9.3C2.2 9.8 2.7 10 3 10C3.4 10 4 9.8 4 9C4 7.5 2.5 6.5 2.5 4.5C2.5 3 3.5 2 4 1C4.3 1.8 4 2.5 4 3.3C4 4.3 4.8 4 5 3C5.2 2 5 1 5 0Z'/></svg>") center / contain no-repeat;
-}
-
-/* signature marker — small gold diamond */
-.d-sig {
-  display: inline-block;
-  width: 0.45rem;
-  height: 0.45rem;
-  margin-right: 0.45rem;
-  vertical-align: 0.1em;
-  background: var(--gold);
-  transform: rotate(45deg);
-}
-
-/* Signatures section subtle backing */
-.cat-signatures {
-  padding: 2rem 2rem 1.5rem;
-  background: var(--bg-alt);
-  border-left: 2px solid var(--gold);
-}
-
-.cat-signatures .cat-head {
-  margin-top: 0;
-}
-
-/* ---------- Legend ---------- */
-.menu-legend {
-  margin-top: 5rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--line);
-  text-align: center;
-}
-
-.legend-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.75rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.legend-note {
-  max-width: 640px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.7;
-  font-style: italic;
-}
+/* spicy and signature markers + legend removed */
 
 /* ---------- Responsive ----------
    Two-column layout is preserved at every viewport so the
