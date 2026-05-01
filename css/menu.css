@@ -154,7 +154,26 @@
 
 /* ---------- Category ---------- */
 .cat {
+  display: flex;
+  flex-direction: column;
   break-inside: avoid;
+}
+
+/* Decorative illustration that fills empty space at the bottom of a column */
+.cat-illus {
+  margin-top: auto;
+  padding: 3rem 1rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  color: var(--gold-deep);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.cat-illus svg {
+  width: clamp(180px, 22vw, 240px);
+  height: auto;
+  display: block;
 }
 
 .cat-head {
