@@ -190,70 +190,8 @@ img {
 .hero-card {
   position: relative;
   padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.75rem, 5vw, 4rem);
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid var(--gold);
-  text-align: center;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 1px solid var(--gold);
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-.hero-card-corner {
-  position: absolute;
-  width: 22px;
-  height: 22px;
+  background: transparent;
   border: 0;
-  pointer-events: none;
-}
-
-.hero-card-corner::before,
-.hero-card-corner::after {
-  content: "";
-  position: absolute;
-  background: var(--gold-deep);
-}
-
-.hero-card-corner::before {
-  width: 10px;
-  height: 1px;
-  top: 0;
-  left: 0;
-}
-
-.hero-card-corner::after {
-  width: 1px;
-  height: 10px;
-  top: 0;
-  left: 0;
-}
-
-.hero-card-corner-tl { top: -2px; left: -2px; }
-.hero-card-corner-tr {
-  top: -2px;
-  right: -2px;
-  transform: scaleX(-1);
-}
-.hero-card-corner-bl {
-  bottom: -2px;
-  left: -2px;
-  transform: scaleY(-1);
-}
-.hero-card-corner-br {
-  bottom: -2px;
-  right: -2px;
-  transform: scale(-1, -1);
-}
-
-.hero-card .eyebrow {
-  margin: 0 0 2rem;
   text-align: center;
 }
 
