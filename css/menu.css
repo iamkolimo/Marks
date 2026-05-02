@@ -381,6 +381,85 @@
   }
 }
 
+/* ---------- Spirits table (Whisky, Cognac, Gin/Vodka, Tequila) ---------- */
+.d-spirit-head {
+  display: grid;
+  grid-template-columns: 1fr 5.5em 4.5em;
+  gap: 0 1rem;
+  padding: 0.5rem 0 0.45rem;
+  margin-top: 0.25rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.d-spirit-head span:nth-child(2),
+.d-spirit-head span:nth-child(3) {
+  text-align: right;
+}
+
+.d.d-spirit {
+  display: grid;
+  grid-template-columns: 1fr 5.5em 4.5em;
+  gap: 0 1rem;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  line-height: 1.45;
+}
+
+.d-spirit .d-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+}
+
+.d-spirit .d-meta {
+  margin-left: 0.5rem;
+}
+
+.d-spirit .d-bottle,
+.d-spirit .d-shot {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--gold-deep);
+  text-align: right;
+  letter-spacing: 0.01em;
+}
+
+/* Empty cells render as a faint dash so the table reads cleanly */
+.d-spirit .d-bottle:empty::after,
+.d-spirit .d-shot:empty::after {
+  content: "—";
+  color: var(--muted);
+  opacity: 0.5;
+}
+
+/* Full-width spirits list keeps a single column instead of splitting,
+   so the bottle/shot header row stays at the top and rows align under it. */
+.cat-full .spirits-list {
+  column-count: 1 !important;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cat-full .d-spirit-head {
+  max-width: 720px;
+  margin: 0.25rem auto 0;
+}
+
+.cat-full > .cat-sub {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ---------- Inline markers ---------- */
 .d-tag {
   display: inline-block;
