@@ -382,13 +382,22 @@
 }
 
 /* ---------- Spirits table (Whisky, Cognac, Gin/Vodka, Tequila, Champagne) ----------
-   Columns: name | shot | bottle (bottle is the outermost right column) */
-.d-spirit-head {
+   Columns: name | shot | bottle (bottle is the outermost right column).
+   The header row is placed INSIDE the same <ul> as a <li class="d-spirit-head">
+   so it inherits the exact same width as the data rows below it. */
+.spirits-list {
+  list-style: none;
+}
+
+.spirits-list .d-spirit-head,
+.spirits-list .d.d-spirit {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 4em 6em;
   gap: 0 1.25rem;
+}
+
+.d-spirit-head {
   padding: 0.5rem 0 0.45rem;
-  margin-top: 0.25rem;
   border-bottom: 1px solid var(--line);
   font-family: var(--sans);
   font-size: 0.62rem;
@@ -403,10 +412,11 @@
   text-align: right;
 }
 
+.d-spirit-head + .d {
+  border-top: 0;
+}
+
 .d.d-spirit {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 4em 6em;
-  gap: 0 1.25rem;
   align-items: baseline;
   padding: 0.55rem 0;
   line-height: 1.45;
@@ -445,8 +455,8 @@
 }
 
 @media (max-width: 480px) {
-  .d-spirit-head,
-  .d.d-spirit {
+  .spirits-list .d-spirit-head,
+  .spirits-list .d.d-spirit {
     grid-template-columns: minmax(0, 1fr) 3em 5em;
     gap: 0 0.75rem;
   }
@@ -467,11 +477,7 @@
   column-count: 1 !important;
   max-width: 720px;
   margin: 0 auto;
-}
-
-.cat-full .d-spirit-head {
-  max-width: 720px;
-  margin: 0.25rem auto 0;
+  padding: 0;
 }
 
 .cat-full > .cat-sub {
