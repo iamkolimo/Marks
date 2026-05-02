@@ -392,7 +392,9 @@
 .spirits-list .d-spirit-head,
 .spirits-list .d.d-spirit {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 4em 6em;
+  /* rem (not em) so column widths stay identical across the header row
+     (which has a smaller font-size) and the data rows below it. */
+  grid-template-columns: minmax(0, 1fr) 4rem 6rem;
   gap: 0 1.25rem;
 }
 
@@ -400,16 +402,23 @@
   padding: 0.5rem 0 0.45rem;
   border-bottom: 1px solid var(--line);
   font-family: var(--sans);
-  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold-deep);
 }
 
+.d-spirit-head span {
+  font-size: 0.62rem;
+}
+
 .d-spirit-head span:nth-child(2),
 .d-spirit-head span:nth-child(3) {
   text-align: right;
+  /* Trailing letter-spacing leaves a phantom gap after the last letter that
+     right-aligned data values don't have. Pull the visible right edge over
+     by the same amount so SHOT/BOTTLE labels sit flush with the prices below. */
+  margin-right: -0.24em;
 }
 
 .d-spirit-head + .d {
@@ -457,7 +466,7 @@
 @media (max-width: 480px) {
   .spirits-list .d-spirit-head,
   .spirits-list .d.d-spirit {
-    grid-template-columns: minmax(0, 1fr) 3em 5em;
+    grid-template-columns: minmax(0, 1fr) 3rem 5rem;
     gap: 0 0.75rem;
   }
 
