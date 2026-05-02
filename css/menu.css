@@ -381,11 +381,12 @@
   }
 }
 
-/* ---------- Spirits table (Whisky, Cognac, Gin/Vodka, Tequila) ---------- */
+/* ---------- Spirits table (Whisky, Cognac, Gin/Vodka, Tequila, Champagne) ----------
+   Columns: name | shot | bottle (bottle is the outermost right column) */
 .d-spirit-head {
   display: grid;
-  grid-template-columns: 1fr 5.5em 4.5em;
-  gap: 0 1rem;
+  grid-template-columns: minmax(0, 1fr) 4em 6em;
+  gap: 0 1.25rem;
   padding: 0.5rem 0 0.45rem;
   margin-top: 0.25rem;
   border-bottom: 1px solid var(--line);
@@ -404,8 +405,8 @@
 
 .d.d-spirit {
   display: grid;
-  grid-template-columns: 1fr 5.5em 4.5em;
-  gap: 0 1rem;
+  grid-template-columns: minmax(0, 1fr) 4em 6em;
+  gap: 0 1.25rem;
   align-items: baseline;
   padding: 0.55rem 0;
   line-height: 1.45;
@@ -417,6 +418,7 @@
   font-size: 0.92rem;
   color: var(--ink);
   letter-spacing: 0.005em;
+  min-width: 0;
 }
 
 .d-spirit .d-meta {
@@ -431,6 +433,7 @@
   color: var(--gold-deep);
   text-align: right;
   letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Empty cells render as a faint dash so the table reads cleanly */
@@ -439,6 +442,23 @@
   content: "—";
   color: var(--muted);
   opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+  .d-spirit-head,
+  .d.d-spirit {
+    grid-template-columns: minmax(0, 1fr) 3em 5em;
+    gap: 0 0.75rem;
+  }
+
+  .d-spirit .d-name {
+    font-size: 0.85rem;
+  }
+
+  .d-spirit .d-bottle,
+  .d-spirit .d-shot {
+    font-size: 0.88rem;
+  }
 }
 
 /* Full-width spirits list keeps a single column instead of splitting,
