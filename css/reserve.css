@@ -1,0 +1,156 @@
+/* ========================================================
+   Reservation page
+   ======================================================== */
+
+.reserve-page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 9rem var(--pad) 5rem;
+}
+
+/* ---------- Hero ---------- */
+.reserve-hero {
+  text-align: center;
+  padding: 0 0 4rem;
+}
+
+.cover-eyebrow {
+  margin: 0 0 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.reserve-title {
+  margin: 0 0 1.5rem;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.reserve-title em {
+  font-style: italic;
+  color: var(--gold-deep);
+}
+
+.reserve-sub {
+  max-width: 560px;
+  margin: 0 auto 2.25rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.cover-rule {
+  width: 56px;
+  height: 1px;
+  margin: 0 auto;
+  background: var(--gold);
+}
+
+/* ---------- Layout ---------- */
+.reserve-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  margin-top: 2rem;
+}
+
+/* ---------- CTA card (replaces the previous form column) ---------- */
+.reserve-cta-col {
+  padding: 3.5rem clamp(1.5rem, 3vw, 2.75rem);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reserve-cta-col .kicker {
+  margin-bottom: 1.25rem;
+}
+
+.reserve-cta-title {
+  margin: 0 0 1.5rem;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.85rem, 3.4vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+}
+
+.reserve-cta-col .reserve-lede {
+  max-width: 440px;
+  margin: 0 auto 2.25rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.reserve-cta-col .reserve-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.25rem;
+}
+
+/* ---------- Aside ---------- */
+.reserve-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  padding-top: 1rem;
+}
+
+.aside-block {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.aside-block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.aside-big {
+  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+
+.aside-big a {
+  transition: color 0.2s ease;
+}
+
+.aside-big a:hover {
+  color: var(--gold-deep);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .reserve-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reserve-cta-col {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .reserve-page {
+    padding: 7rem 1rem 3rem;
+  }
+
+  .reserve-cta-col {
+    padding: 2rem 1rem;
+  }
+}
