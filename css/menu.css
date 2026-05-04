@@ -484,6 +484,7 @@
    so the bottle/shot header row stays at the top and rows align under it. */
 .cat-full .spirits-list {
   column-count: 1 !important;
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
   padding: 0;
