@@ -367,21 +367,34 @@
 }
 
 /* Two-column dish list (used for Maki Signature rolls).
-   Kicks in early so Maki — which sits in a pair-row alongside the much
-   shorter Sushi Platters — splits into 2 sub-columns on tablet and
-   wider phones, balancing the row's height. Stays single column on
-   narrow phones where two sub-columns would be too cramped to read. */
-@media (min-width: 600px) {
-  .dishes-2col {
-    column-count: 2;
-    column-gap: clamp(1rem, 2.5vw, 2rem);
+   Applies at all widths — on tablet+ it splits Maki inside its half-
+   width pair-row cell; on mobile the parent pair-row stacks (see
+   .pair-row--stack-mobile below) so dishes-2col splits Maki across
+   the full screen width. */
+.dishes-2col {
+  column-count: 2;
+  column-gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.dishes-2col .d {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.dishes-2col .d + .d {
+  border-top: 0;
+}
+
+/* Stack a pair-row vertically on mobile so its right-hand section gets
+   the full screen width (used for Sushi Platters | Maki Signature, where
+   Maki is much longer than Platters and needs the full row to balance). */
+@media (max-width: 680px) {
+  .pair-row--stack-mobile {
+    grid-template-columns: 1fr;
+    row-gap: clamp(2rem, 5vw, 3rem);
   }
-  .dishes-2col .d {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .dishes-2col .d + .d {
-    border-top: 0;
+  .pair-row--stack-mobile::before {
+    display: none;
   }
 }
 
