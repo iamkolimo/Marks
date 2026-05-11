@@ -605,6 +605,34 @@
 
   .cat-full.cat-signatures .d {
     padding: 0.75rem 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Override the mobile .d-line flex defaults so the name + meta + desc
+     all center inside the signature row instead of left-aligning. */
+  .cat-full.cat-signatures .d-line {
+    justify-content: center;
+    text-align: center;
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .cat-full.cat-signatures .d-name {
+    text-align: center;
+  }
+
+  .cat-full.cat-signatures .d-desc {
+    text-align: center;
+  }
+
+  /* Override the mobile .d-price align-self: flex-start so the price
+     sits centered under the description instead of pulling left. */
+  .cat-full.cat-signatures .d-price {
+    align-self: center;
+    text-align: center;
+    min-width: 0;
   }
 }
 
