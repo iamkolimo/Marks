@@ -552,6 +552,32 @@
   color: var(--ink-soft);
 }
 
+/* When Marks Signatures is full-width centered, swap the left rule for
+   top + bottom gold rules so the layout reads symmetrically. */
+.cat-full.cat-signatures {
+  border-left: 0;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding: 2.5rem clamp(1.25rem, 5vw, 4rem) 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.cat-full.cat-signatures .cat-head {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  letter-spacing: 0.32em;
+}
+
+.cat-full.cat-signatures .cat-dishes {
+  text-align: left;
+}
+
+@media (max-width: 680px) {
+  .cat-full.cat-signatures {
+    padding: 1.5rem 1rem 1rem;
+  }
+}
+
 /* Category divider — sits above a paired row to group sections under
    a common banner like "Mains" or "Sushi". */
 .menu-cat-divider {
