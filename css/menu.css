@@ -568,13 +568,43 @@
   letter-spacing: 0.32em;
 }
 
+/* Center each signature dish — name+meta on top, desc below, price
+   beneath, all stacked and centered. Looks like a centerpiece tile
+   rather than a left-aligned row. */
 .cat-full.cat-signatures .cat-dishes {
-  text-align: left;
+  text-align: center;
+}
+
+.cat-full.cat-signatures .d {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.cat-full.cat-signatures .d-line {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.cat-full.cat-signatures .d-desc {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.cat-full.cat-signatures .d-price {
+  min-width: 0;
+  text-align: center;
 }
 
 @media (max-width: 680px) {
   .cat-full.cat-signatures {
     padding: 1.5rem 1rem 1rem;
+  }
+
+  .cat-full.cat-signatures .d {
+    padding: 0.75rem 0;
   }
 }
 
