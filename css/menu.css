@@ -9,45 +9,6 @@
   padding: 9rem var(--pad) 5rem;
 }
 
-/* ---------- Cover ---------- */
-.menu-cover {
-  text-align: center;
-  padding: 0 0 3.5rem;
-}
-
-.cover-eyebrow {
-  margin: 0 0 1.5rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold-deep);
-}
-
-.cover-title {
-  margin: 0 0 1rem;
-  font-family: var(--serif);
-  font-weight: 300;
-  font-style: italic;
-  font-size: clamp(3.5rem, 9vw, 6.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.01em;
-}
-
-.cover-sub {
-  max-width: 520px;
-  margin: 0 auto 2.25rem;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.75;
-}
-
-.cover-rule {
-  width: 56px;
-  height: 1px;
-  margin: 0 auto;
-  background: var(--gold);
-}
-
 /* ---------- Menu tabs (Food / Drinks) ---------- */
 .menu-tabs {
   display: flex;
@@ -185,45 +146,11 @@
   }
 }
 
-/* Backward compat for any leftover .menu-col wrappers */
-.menu-col {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-}
-
 /* ---------- Category ---------- */
 .cat {
   display: flex;
   flex-direction: column;
   break-inside: avoid;
-}
-
-/* Decorative illustration that fills empty space at the bottom of a column */
-.cat-illus {
-  margin-top: auto;
-  padding: 3rem 1rem 0.5rem;
-  display: flex;
-  justify-content: center;
-  color: var(--gold-deep);
-  opacity: 0.22;
-  pointer-events: none;
-}
-
-.cat-illus svg {
-  width: clamp(180px, 22vw, 240px);
-  height: auto;
-  display: block;
-}
-
-/* On mobile, center the illustration vertically in the empty space
-   instead of pinning it to the bottom of the column */
-@media (max-width: 680px) {
-  .cat-illus {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 2rem 1rem;
-  }
 }
 
 .cat-head {
@@ -316,9 +243,9 @@
 .d-price {
   flex-shrink: 0;
   font-family: var(--serif);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1rem;
-  color: var(--gold-deep);
+  color: var(--ink);
   min-width: 2.25rem;
   text-align: right;
   letter-spacing: 0.01em;
@@ -338,11 +265,9 @@
   font-size: 0.9rem;
 }
 
-/* Two-column dish list (used for Maki Signature rolls).
-   Applies at all widths — on tablet+ it splits Maki inside its half-
-   width pair-row cell; on mobile the parent pair-row stacks (see
-   .pair-row--stack-mobile below) so dishes-2col splits Maki across
-   the full screen width. */
+/* Two-column dish list (used for Maki Signature, Mocktails, etc.).
+   Applies at all widths — splits a long list into two columns inside
+   whatever cell it sits in (full-width cat-full or pair-row cell). */
 .dishes-2col {
   column-count: 2;
   column-gap: clamp(1rem, 2.5vw, 2rem);
@@ -355,19 +280,6 @@
 
 .dishes-2col .d + .d {
   border-top: 0;
-}
-
-/* Stack a pair-row vertically on mobile so its right-hand section gets
-   the full screen width (used for Sushi Platters | Maki Signature, where
-   Maki is much longer than Platters and needs the full row to balance). */
-@media (max-width: 680px) {
-  .pair-row--stack-mobile {
-    grid-template-columns: 1fr;
-    row-gap: clamp(2rem, 5vw, 3rem);
-  }
-  .pair-row--stack-mobile::before {
-    display: none;
-  }
 }
 
 /* ---------- Spirits table (Whisky, Cognac, Gin/Vodka, Tequila, Champagne) ----------
@@ -436,9 +348,9 @@
 .d-spirit .d-bottle,
 .d-spirit .d-shot {
   font-family: var(--serif);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 0.95rem;
-  color: var(--gold-deep);
+  color: var(--ink);
   text-align: right;
   letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
@@ -654,6 +566,7 @@
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold-deep);
+  text-align: center;
 }
 
 /* ---------- Responsive ----------
@@ -671,10 +584,6 @@
 
   .menu-grid {
     gap: 3.25rem;
-  }
-
-  .menu-col {
-    gap: 2.75rem;
   }
 
   .cat-head {
@@ -717,14 +626,6 @@
 
   .menu-grid {
     gap: 2.5rem;
-  }
-
-  .menu-col {
-    gap: 2.25rem;
-  }
-
-  .cover-title {
-    font-size: clamp(2.75rem, 12vw, 4rem);
   }
 
   .cat-head {
@@ -776,12 +677,6 @@
     flex: 0 0 auto;
   }
 
-  .d-spicy,
-  .d-sig {
-    flex: 0 0 auto;
-    margin-right: 0;
-  }
-
   .d-desc {
     display: block;
     flex-basis: 100%;
@@ -803,11 +698,6 @@
 
   .cat-signatures {
     padding: 1.25rem 1rem 0.75rem;
-  }
-
-  .legend-inner {
-    gap: 0.75rem 1.25rem;
-    font-size: 0.66rem;
   }
 }
 
