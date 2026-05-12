@@ -242,13 +242,13 @@
 
 .d-price {
   flex-shrink: 0;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
   color: var(--ink);
   min-width: 2.25rem;
   text-align: right;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 
@@ -347,12 +347,12 @@
 
 .d-spirit .d-bottle,
 .d-spirit .d-shot {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.92rem;
   color: var(--ink);
   text-align: right;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 
