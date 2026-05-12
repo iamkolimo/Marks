@@ -985,3 +985,19 @@ img {
   opacity: 1;
   transform: none;
 }
+
+/* ---------- Accessibility / SEO ----------
+   Visually hidden but available to screen readers and search-engine
+   crawlers. Use for landmark headings the visual design doesn't
+   spell out (e.g. the h1 on the Menu and Drinks pages). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
