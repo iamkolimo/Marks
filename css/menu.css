@@ -244,9 +244,9 @@
   flex-shrink: 0;
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--ink);
-  min-width: 2.25rem;
+  min-width: 2rem;
   text-align: right;
   letter-spacing: 0;
   font-variant-numeric: tabular-nums;
@@ -349,7 +349,7 @@
 .d-spirit .d-shot {
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   color: var(--ink);
   text-align: right;
   letter-spacing: 0;
@@ -367,17 +367,29 @@
 @media (max-width: 480px) {
   .spirits-list .d-spirit-head,
   .spirits-list .d.d-spirit {
-    grid-template-columns: minmax(0, 1fr) 3rem 5rem;
+    grid-template-columns: minmax(0, 1fr) 2.75rem 4.5rem;
     gap: 0 0.75rem;
   }
 
   .d-spirit .d-name {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .d-spirit .d-bottle,
   .d-spirit .d-shot {
-    font-size: 0.88rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Narrow phones — spirits tables don't fit two-up. Collapse any pair-row
+   that contains a spirits table to a single column so name + shot + bottle
+   actually have room, and hide that row's vertical divider. */
+@media (max-width: 600px) {
+  .pair-row:has(.spirits-list) {
+    grid-template-columns: 1fr;
+  }
+  .pair-row:has(.spirits-list)::before {
+    display: none;
   }
 }
 
@@ -609,7 +621,7 @@
   }
 
   .d-price {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .cat-signatures {
@@ -688,7 +700,7 @@
 
   .d-price {
     align-self: flex-start;
-    font-size: 0.88rem;
+    font-size: 0.8rem;
     min-width: auto;
   }
 
@@ -730,7 +742,7 @@
   }
 
   .d-price {
-    font-size: 0.8rem;
+    font-size: 0.74rem;
   }
 
   .d-tag {
