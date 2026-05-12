@@ -322,35 +322,7 @@
   min-width: 2.25rem;
   text-align: right;
   letter-spacing: 0.01em;
-}
-
-/* Naira symbol removed — prices render as plain numbers */
-
-/* Paired price (bottle + shot / glass) for spirits & wines */
-.d-price-pair {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  text-align: right;
-}
-
-.d-price-shot {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 400;
-  font-style: italic;
-}
-
-.d-price-shot::before {
-  content: "";
-}
-
-.d-price-pair .d-price {
-  min-width: 3rem;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Compact dish rows (nigiri, sashimi, sides) */
