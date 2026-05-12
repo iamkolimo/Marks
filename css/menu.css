@@ -694,7 +694,7 @@
 /* Tablet — narrower column gap, slightly smaller type */
 @media (max-width: 960px) {
   .menu-page {
-    padding: 8rem 1.75rem 4rem;
+    padding: 8rem 2.5rem 4rem;
   }
 
   .menu-grid {
@@ -740,7 +740,7 @@
    name+price row so the two-column grid stays consistent */
 @media (max-width: 680px) {
   .menu-page {
-    padding: 7rem 1.25rem 3rem;
+    padding: 7rem 2rem 3rem;
   }
 
   .menu-grid {
@@ -842,7 +842,7 @@
 /* Very narrow phones — keep two columns, minimum comfortable size */
 @media (max-width: 420px) {
   .menu-page {
-    padding: 6.5rem 1rem 2.5rem;
+    padding: 6.5rem 1.5rem 2.5rem;
   }
 
   .menu-grid {
