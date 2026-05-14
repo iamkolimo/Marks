@@ -3,15 +3,23 @@
   const nav = document.querySelector(".site-nav");
   const toggle = document.querySelector(".nav-toggle");
   const yearEl = document.getElementById("year");
+  const backToTop = document.querySelector(".back-to-top");
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   const onScroll = () => {
     if (window.scrollY > 12) header.classList.add("is-scrolled");
     else header.classList.remove("is-scrolled");
+    if (backToTop) backToTop.classList.toggle("is-visible", window.scrollY > 600);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  if (backToTop) {
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
   if (toggle && nav) {
     const setNavState = (open) => {
