@@ -9,3 +9,7 @@ node_modules/
 .idea/
 .vscode/
 .claude/
+
+# High-res photo originals kept locally only — the web-optimized
+# versions are committed as images/gallery-*.jpg
+images/Home Photos/
