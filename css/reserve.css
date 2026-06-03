@@ -51,6 +51,34 @@
   background: var(--gold);
 }
 
+/* ---------- Venue banner ----------
+   A single cinematic interior shot beneath the hero. Kept clean and
+   minimal: a contained band cropped to a wide ratio, with a hairline
+   gold frame inset to tie it to the brand. */
+.reserve-banner {
+  margin: 1rem 0 0;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-alt);
+}
+
+.reserve-banner img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
+}
+
+.reserve-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
 /* ---------- Layout ---------- */
 .reserve-layout {
   display: grid;
@@ -143,6 +171,11 @@
   .reserve-cta-col {
     padding: 2.5rem 1.5rem;
   }
+
+  /* taller crop so the interior reads on narrower screens */
+  .reserve-banner img {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 @media (max-width: 540px) {
@@ -152,5 +185,13 @@
 
   .reserve-cta-col {
     padding: 2rem 1rem;
+  }
+
+  .reserve-banner img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .reserve-banner::after {
+    inset: 0.5rem;
   }
 }
