@@ -1,8 +1,8 @@
 # robots.txt for Marks at the Park
-# https://marksatthepark.com
+# https://www.marksatthepark.com
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://marksatthepark.com/sitemap.xml
+Sitemap: https://www.marksatthepark.com/sitemap.xml
