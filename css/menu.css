@@ -282,6 +282,63 @@
   border-top: 0;
 }
 
+/* Single centered narrow column inside a cat-full section (Social
+   Serves, Wine by the Glass) — overrides the default 2-col split. */
+.cat-full .dishes-single {
+  column-count: 1 !important;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Flavour-profile line under a drink (e.g. "Fresh • Floral • Light") */
+.d-flav {
+  display: block;
+  flex-basis: 100%;
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  font-style: italic;
+  letter-spacing: 0.07em;
+  color: var(--gold-deep);
+  opacity: 0.85;
+}
+
+/* Centered lede sitting directly under a menu-cat-divider */
+.menu-cat-lede {
+  margin: -1.5rem auto 0;
+  max-width: 560px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Stack two sections inside one pair-row cell */
+.cat-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Footnotes at the end of the menu */
+.menu-footnotes {
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: center;
+}
+
+.menu-footnote {
+  margin: 0;
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.menu-footnote + .menu-footnote {
+  margin-top: 0.4rem;
+}
+
 /* ---------- Spirits table (Whisky, Cognac, Gin/Vodka, Tequila, Champagne) ----------
    Columns: name | shot | bottle (bottle is the outermost right column).
    The header row is placed INSIDE the same <ul> as a <li class="d-spirit-head">
