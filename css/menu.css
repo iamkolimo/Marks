@@ -756,9 +756,28 @@
   }
 
   .d-price {
-    align-self: flex-start;
+    /* sit on the same text baseline as the dish name's first line
+       (flex-start pushed the number visibly higher than the name) */
+    align-self: baseline;
     font-size: 0.8rem;
     min-width: auto;
+  }
+
+  /* Rich two-column lists (ingredients + flavour line per item, e.g.
+     Mocktails) collapse to a single column on phones — two ~160px
+     columns stagger unevenly and wrap every line. Compact lists like
+     Maki Signature keep their 2-col split. */
+  .dishes-collapse {
+    column-count: 1 !important;
+  }
+
+  .dishes-collapse .d + .d {
+    border-top: 1px dotted rgba(20, 20, 20, 0.08);
+  }
+
+  .d-flav {
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
   }
 
   .dishes-compact .d-desc {
