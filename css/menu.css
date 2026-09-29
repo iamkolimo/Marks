@@ -313,6 +313,18 @@
   color: var(--muted);
 }
 
+/* Balance a pair-row whose two lists differ in length (White Wine vs
+   Red Wine). Both cells are already the same height; here every row in
+   a cell takes an equal share of any spare height, so the shorter list
+   ends on the same line as the longer one instead of leaving a gap. */
+.pair-row--balance > .cat > .cat-dishes {
+  display: contents;
+}
+
+.pair-row--balance > .cat > .cat-dishes > .d {
+  flex: 1 0 auto;
+}
+
 /* Stack two sections inside one pair-row cell */
 .cat-stack {
   display: flex;
@@ -771,25 +783,6 @@
     column-count: 1 !important;
   }
 
-  /* Stack a pair-row into one full-width column on phones. Used where
-     the two lists differ in length (White Wine 9 bottles, Red Wine 11),
-     which otherwise leaves a tall empty gap under the shorter side. */
-  .pair-row--stack-mobile {
-    grid-template-columns: 1fr;
-    row-gap: 2.5rem;
-  }
-
-  .pair-row--stack-mobile::before {
-    display: none;
-  }
-
-  .pair-row--stack-mobile > .cat {
-    padding: 0 clamp(1rem, 5vw, 4rem);
-  }
-
-  .pair-row--stack-mobile > .cat > .cat-head {
-    text-align: center;
-  }
 
   .dishes-collapse .d + .d {
     border-top: 1px dotted rgba(20, 20, 20, 0.08);
